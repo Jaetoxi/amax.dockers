@@ -13,6 +13,8 @@ echo $CONF_DIR
 echo "NET=$NET" >> $CONF_DIR/amnod.env
 echo "tag=$tag" >> $CONF_DIR/amnod.env
 echo "id=$id" >> $CONF_DIR/amnod.env
+echo "agentname=$agentname" >> $CONF_DIR/amnod.env
+echo "localp2p=$localp2p" >> $CONF_DIR/amnod.env
 
 cp ./run-amnod.sh $CONF_DIR/run.sh
 chmod +x $CONF_DIR/run.sh
