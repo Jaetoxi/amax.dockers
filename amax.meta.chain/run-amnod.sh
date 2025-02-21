@@ -14,7 +14,7 @@ cp      ./conf/base.ini         $DEST_CONF
 # copy conf node info into config
 echo " " >> $DEST_CONF
 echo "#### Node base conf: " >> $DEST_CONF
-cat ./$NET/node.ini >> $DEST_CONF
+cat ./conf/node.ini >> $DEST_CONF
 
 sed -i "s/agentname/${agentname}\"/g" $DEST_CONF
 sed -i "s/localp2p/${localp2p}\"/g" $DEST_CONF

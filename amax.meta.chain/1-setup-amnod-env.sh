@@ -6,7 +6,7 @@ echo $CONF_DIR
 [ ! -f "$CONF_DIR/amnod.env" ]                          && \
     cp      ./amnod/$NET/amnod.env      $CONF_DIR/      && \
     cp      ./amnod/$NET/genesis.json   $CONF_DIR/      && \
-    cp      ./amnod/$NET/node.ini   $CONF_DIR/      && \
+    cp      ./amnod/$NET/node.ini       $CONF_DIR/conf/ && \
     cp      ./amnod/docker-compose.yml  $CONF_DIR/      && \
     cp -r   ./amnod/conf                $CONF_DIR/      && \
     cp -r   ./amnod/bin                 $CONF_DIR/
