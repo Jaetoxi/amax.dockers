@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   amkey:
-    image: armoniax/amnod:${AMNOD_IMG_VER}
+    image: armoniax/amnod:${NODE_IMG_VER}
     container_name: raysvault
     working_dir: /opt/amax
     entrypoint: ["./bin/run-wallet.sh", "."]
