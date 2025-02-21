@@ -16,9 +16,9 @@ echo " " >> $DEST_CONF
 echo "#### Node base conf: " >> $DEST_CONF
 cat ./conf/node.ini >> $DEST_CONF
 
-sed -i "s/agentname/${agentname}\"/g" $DEST_CONF
-sed -i "s/localp2p/${localp2p}\"/g" $DEST_CONF
-sed -i "s/P2P_PORT/${P2P_PORT}\"/g" $DEST_CONF
+sed -i "s/agentname/${agentname}/g" $DEST_CONF
+sed -i "s/localp2p/${localp2p}/g" $DEST_CONF
+sed -i "s/P2P_PORT/${P2P_PORT}/g" $DEST_CONF
 
 
 if  [ "${history_plugin}" == "true" ]; then
