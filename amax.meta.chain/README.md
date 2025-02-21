@@ -6,9 +6,9 @@
 curl http://127.0.0.1:8888/v1/producer/create_snapshot | json_pp
 ```
 
-3. Wait for `amnod` to process several blocks after the snapshot completed. The goal is for the `state-history` files to contain at least 1 more block than the portable snapshot has, and for the blocks.log file to contain the block after it has become irreversible.
+3. Wait for `node` to process several blocks after the snapshot completed. The goal is for the `state-history` files to contain at least 1 more block than the portable snapshot has, and for the blocks.log file to contain the block after it has become irreversible.
 
-4. Stop amnod
+4. Stop node
 5. Make backups of:
 - The newly-created portable snapshot (`data/snapshots/snapshot-xxxxxxx.bin`)
 - The contents of `data/state-history`:
@@ -28,5 +28,5 @@ curl http://127.0.0.1:8888/v1/producer/create_snapshot | json_pp
 - Optional: a block log which includes the block the snapshot was taken at. Do *NOT* include `data/blocks/reversible`.
 
 2. Make sure `data/state` does not exist
-3. Start `amnod` with the `--snapshot` option, and the options listed in the `state_history_plugin`.
-4. Do not stop `amnod` until it has received at least 1 block from the network, or it won't be able to restart.
+3. Start `node` with the `--snapshot` option, and the options listed in the `state_history_plugin`.
+4. Do not stop `node` until it has received at least 1 block from the network, or it won't be able to restart.

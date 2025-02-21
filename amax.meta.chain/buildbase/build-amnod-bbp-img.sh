@@ -1,2 +1,2 @@
-. ~/.amnod.env
-docker build --build-arg VER=$VER -t armoniax/amnod:$VER -f ./Dockerfile .
+. ~/.node.env
+docker build --build-arg VER=$VER -t armoniax/node:$VER -f ./Dockerfile .
