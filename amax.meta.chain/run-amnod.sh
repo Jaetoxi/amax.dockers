@@ -21,7 +21,7 @@ sed -i "s/p2p_server_address/${p2p_server_address}/g" $DEST_CONF
 sed -i "s/P2P_PORT/${P2P_PORT}/g" $DEST_CONF
 if [ "${p2p_peer_addresses}" != "" ]; then
     for peer in "${p2p_peer_addresses[@]}"; do
-        echo "p2p-peer-address = $peer\n" >> $DEST_CONF
+        echo "p2p-peer-address = $peer" >> $DEST_CONF
     done
 fi
 
