@@ -15,7 +15,7 @@ OPTIONS="--data-dir $AMAX/data --config-dir $AMAX/conf"
 if [[ ! -f $AMAX/data/state/shared_memory.bin ]] && [[ -f "$SNAPSHOT" ]]; then
   OPTIONS="$OPTIONS --snapshot ${SNAPSHOT} "
 elif [[ ! -f $AMAX/data/blocks/blocks.index ]]; then
-  OPTIONS="\$OPTIONS --genesis-json $AMAX/conf/genesis.json"
+  OPTIONS="$OPTIONS --genesis-json $AMAX/conf/genesis.json"
 fi
 
 trap 'echo "[$(date)]Start Shutdown"; kill $(jobs -p); wait; echo "[$(date)]Shutdown ok"' SIGINT SIGTERM
