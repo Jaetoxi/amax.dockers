@@ -3,9 +3,9 @@ version: "3.9"
 services:
   amnod:
     image: armoniax/amnod:${AMNOD_IMG_VER}
-    container_name: amnod-${NET}-${tag}-${id}
-    working_dir: ${NODE_HOME}/amax_${NET}_${tag}
-    entrypoint: ["./bin/start.sh", "$NODE_HOME/amax_${NET}_${tag}", "$PARAMs"]
+    container_name: amnod-${NET}-${container_id}
+    working_dir: ${NODE_HOME}/amax_${NET}_${container_id}
+    entrypoint: ["./bin/start.sh", "$NODE_HOME/amax_${NET}_${container_id}", "$PARAMs"]
     restart: always
     privileged: true
     ports: 
@@ -13,7 +13,7 @@ services:
       - "${P2P_PORT}:9876"
       - "${HIST_WS_PORT}:9555"
     volumes:
-      - ${NODE_HOME}/amax_${NET}_${tag}_${id}/:${NODE_HOME}/amax_${NET}_${tag}/
+      - ${NODE_HOME}/amax_${NET}_${container_id}/:${NODE_HOME}/amax_${NET}_${container_id}/
     dns:
       - 114.114.114.114
       - 8.8.8.8
