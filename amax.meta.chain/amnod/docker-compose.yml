@@ -5,7 +5,7 @@ services:
     image: armoniax/amnod:${AMNOD_IMG_VER}
     container_name: amnod-${NET}-${container_id}
     working_dir: ${NODE_HOME}/amax_${NET}_${container_id}
-    entrypoint: ["./bin/start.sh", "$NODE_HOME/amax_${NET}_${container_id}", "$PARAMs"]
+    entrypoint: ["./bin/start.sh", "$NODE_HOME/amax_${NET}_${container_id}", ""]
     restart: always
     privileged: true
     ports: 
