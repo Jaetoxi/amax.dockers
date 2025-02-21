@@ -1,7 +1,5 @@
-NET=$1
-tag=$2
-
-CONF_DIR=~/.amax_${NET}_${tag}
+source ./conf.env
+CONF_DIR=~/.amax_${NET}_${tag}_${id}
 mkdir -p $CONF_DIR
 echo $CONF_DIR
 
@@ -14,6 +12,7 @@ echo $CONF_DIR
     
 echo "NET=$NET" >> $CONF_DIR/amnod.env
 echo "tag=$tag" >> $CONF_DIR/amnod.env
+echo "id=$id" >> $CONF_DIR/amnod.env
 
 cp ./run-amnod.sh $CONF_DIR/run.sh
 chmod +x $CONF_DIR/run.sh

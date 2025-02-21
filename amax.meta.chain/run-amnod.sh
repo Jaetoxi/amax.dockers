@@ -9,12 +9,12 @@ mkdir -p $DEST_HOME/conf $DEST_HOME/data $DEST_HOME/logs
 
 cp -r   ./bin                   $DEST_HOME/         && \
 cp      ./genesis.json          $DEST_HOME/conf/    && \
-cp      ./conf/base.ini    $DEST_CONF
+cp      ./conf/base.ini         $DEST_CONF
 
 # copy conf node info into config
 echo " " >> $DEST_CONF
 echo "#### Node base conf: " >> $DEST_CONF
-cat ./conf/node.ini >> $DEST_CONF
+cat ./$NET/node.ini >> $DEST_CONF
 
 if  [ "${history_plugin}" == "true" ]; then
     echo " " >> $DEST_CONF
