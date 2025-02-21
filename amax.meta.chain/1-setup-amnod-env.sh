@@ -15,6 +15,7 @@ echo "NET=$NET" >> $CONF_DIR/amnod.env
 echo "container_id=$container_id" >> $CONF_DIR/amnod.env
 echo "agent_name=$agent_name" >> $CONF_DIR/amnod.env
 echo "p2p_server_address=$p2p_server_address" >> $CONF_DIR/amnod.env
+echo "p2p_peer_addresses=$p2p_peer_addresses" >> $CONF_DIR/amnod.env
 
 cp ./run-amnod.sh $CONF_DIR/run.sh
 chmod +x $CONF_DIR/run.sh
