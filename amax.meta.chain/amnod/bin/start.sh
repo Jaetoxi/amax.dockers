@@ -2,7 +2,7 @@
 
 AMAX=$1
 LOGFILE=$AMAX/logs/amnod.log
-
+source $AMAX/bin/start.env
 ulimit -c unlimited
 ulimit -n 65535
 ulimit -s 64000
