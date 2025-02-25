@@ -44,7 +44,7 @@ if  [ "${bp_plugin}" == "true" ]; then
     cat ./conf/plugin_bp.ini >> $DEST_CONF
 fi
 
-docker network create amax
+docker network create flonnet
 docker-compose --env-file ./node.env up -d
 #podman-compose --env-file ./node.env up -d
 
