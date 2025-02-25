@@ -1,7 +1,7 @@
 
-[ ! -f ./amnod.env ] && echo "not in amnod env, hence existing ..." && exit 1
+[ ! -f ./node.env ] && echo "not in node env, hence existing ..." && exit 1
 
-set -a && source ./amnod.env
+set -a && source ./node.env
 
 DEST_HOME="${NODE_HOME}/amax_${NET}_${container_id}"
 DEST_CONF="${DEST_HOME}/conf/config.ini"
@@ -45,8 +45,8 @@ if  [ "${bp_plugin}" == "true" ]; then
 fi
 
 docker network create amax
-docker-compose --env-file ./amnod.env up -d
-#podman-compose --env-file ./amnod.env up -d
+docker-compose --env-file ./node.env up -d
+#podman-compose --env-file ./node.env up -d
 
 if   [ "$NET" = "mainnet" ]; then
     sudo iptables -I INPUT -p tcp -m tcp --dport 9806 -j ACCEPT

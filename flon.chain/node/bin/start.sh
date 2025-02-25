@@ -1,7 +1,7 @@
 #!/bin/bash
 
 AMAX=$1
-LOGFILE=$AMAX/logs/amnod.log
+LOGFILE=$AMAX/logs/node.log
 source $AMAX/bin/start.env
 ulimit -c unlimited
 ulimit -n 65535
@@ -20,11 +20,11 @@ fi
 
 trap 'echo "[$(date)]Start Shutdown"; kill $(jobs -p); wait; echo "[$(date)]Shutdown ok"' SIGINT SIGTERM
 
-## launch amnod program...
-amnod $params $OPTIONS >> $NEW_LOGFILE 2>&1 &
-#amnod  $params $OPTIONS --delete-all-blocks >> $NEW_LOGFILE 2>&1 &
-#amnod  $params $OPTIONS --hard-replay-blockchain --truncate-at-block 87380000 >> $NEW_LOGFILE 2>&1 &
-echo $! > $AMAX/amnod.pid
+## launch node program...
+node $params $OPTIONS >> $NEW_LOGFILE 2>&1 &
+#node  $params $OPTIONS --delete-all-blocks >> $NEW_LOGFILE 2>&1 &
+#node  $params $OPTIONS --hard-replay-blockchain --truncate-at-block 87380000 >> $NEW_LOGFILE 2>&1 &
+echo $! > $AMAX/node.pid
 
 
 [[ -f "$LOGFILE" ]] && unlink $LOGFILE

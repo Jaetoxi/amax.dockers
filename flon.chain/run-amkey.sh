@@ -1,6 +1,6 @@
 #！/bin/bash
 
-cd amkey
+cd key
 
 set -a
 NOD_DIR=$1/amax

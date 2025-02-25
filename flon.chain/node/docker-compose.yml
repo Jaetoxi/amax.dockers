@@ -1,9 +1,9 @@
 version: "3.9"
 
 services:
-  amnod:
-    image: armoniax/amnod:${NODE_IMG_VER}
-    container_name: amnod-${NET}-${container_id}
+  node:
+    image: armoniax/node:${NODE_IMG_VER}
+    container_name: node-${NET}-${container_id}
     working_dir: ${NODE_HOME}/amax_${NET}_${container_id}
     entrypoint: ["./bin/start.sh", "$NODE_HOME/amax_${NET}_${container_id}", ""]
     restart: always

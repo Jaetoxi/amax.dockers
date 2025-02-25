@@ -12,7 +12,7 @@ NEW_LOG="amax-wal-$TIMESTAMP.log"
 
 #apt update && apt install -y libusb-1.0-0
 
-amkey --config-dir ./conf -d ./data --unix-socket-path ./amkey.sock >> $LOGDIR/$NEW_LOG 2>&1 &
+key --config-dir ./conf -d ./data --unix-socket-path ./key.sock >> $LOGDIR/$NEW_LOG 2>&1 &
 
 echo $! > $DATDIR/wallet.pid
 unlink $LOGDIR/amax-wal.log
