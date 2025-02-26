@@ -42,8 +42,12 @@ if  [ "${bp_plugin}" == "true" ]; then
     echo " " >> $DEST_CONF
     echo "#### Block producer plugin conf: " >> $DEST_CONF
     cat ./conf/plugin_bp.ini >> $DEST_CONF
-    echo "producer-name = $producer_name" >> $DEST_CONF
-    echo "signature-provider = $signature_provider " >> $DEST_CONF
+    for producer_name in "${producer_names[@]}"; do
+        echo "producer-name = $producer_name" >> $DEST_CONF
+    done
+    for signature_provider in "${signature_providers[@]}"; do
+        echo "signature-provider = $signature_provider " >> $DEST_CONF
+    done
 fi
 
 docker network create flon

@@ -37,8 +37,8 @@ echo "NODE_HOME=$NODE_HOME" >> $CONF_DIR/node.env
 echo "trace_plugin=$trace_plugin" >> $CONF_DIR/node.env
 echo "state_plugin=$state_plugin" >> $CONF_DIR/node.env
 echo "bp_plugin=$bp_plugin" >> $CONF_DIR/node.env
-echo "signature_provider=$signature_provider" >> $CONF_DIR/node.env
-echo "producer_name=$producer_name" >> $CONF_DIR/node.env
+echo "signature_providers=(${signature_providers[*]}" >> $CONF_DIR/node.env
+echo "producer_names=(${producer_names[*]}" >> $CONF_DIR/node.env
 
 cp ./node/run-node-template.sh $CONF_DIR/run.sh
 chmod +x $CONF_DIR/run.sh
