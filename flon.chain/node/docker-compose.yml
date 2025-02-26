@@ -20,5 +20,5 @@ services:
       
 networks:
   default:
-    name: amax
+    name: flon
     external: true
