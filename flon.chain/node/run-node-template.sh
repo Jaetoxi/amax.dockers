@@ -42,6 +42,8 @@ if  [ "${bp_plugin}" == "true" ]; then
     echo " " >> $DEST_CONF
     echo "#### Block producer plugin conf: " >> $DEST_CONF
     cat ./conf/plugin_bp.ini >> $DEST_CONF
+    echo "producer-name = $producer_name" >> $DEST_CONF
+    echo "signature-provider = $signature_provider " >> $DEST_CONF
 fi
 
 docker network create flon
