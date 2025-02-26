@@ -11,17 +11,17 @@ echo $CONF_DIR
     cp -r   ./node/bin                 $CONF_DIR/
 
 if [ "$NET" = "mainnet" ]; then
-    P2P_PORT=9806
-    RPC_PORT=8888
-    HIST_WS_PORT=8889
+    P2P_PORT=${P2P_PORT}
+    RPC_PORT=${RPC_PORT}
+    HIST_WS_PORT=${HIST_WS_PORT}
 elif [ "$NET" = "testnet" ]; then
-    P2P_PORT=19806
-    RPC_PORT=18888
-    HIST_WS_PORT=18889
+    P2P_PORT=1${P2P_PORT}
+    RPC_PORT=1${RPC_PORT}
+    HIST_WS_PORT=1${HIST_WS_PORT}
 elif [ "$NET" = "devnet" ]; then
-    P2P_PORT=29806
-    RPC_PORT=28888
-    HIST_WS_PORT=28889
+    P2P_PORT=2${P2P_PORT}
+    RPC_PORT=2${RPC_PORT}
+    HIST_WS_PORT=2${HIST_WS_PORT}
 fi
 
 echo "NET=$NET" >> $CONF_DIR/node.env

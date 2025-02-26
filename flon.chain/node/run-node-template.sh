@@ -48,15 +48,6 @@ docker network create flon
 docker-compose --env-file ./node.env up -d
 #podman-compose --env-file ./node.env up -d
 
-if   [ "$NET" = "mainnet" ]; then
-    sudo iptables -I INPUT -p tcp -m tcp --dport 9806 -j ACCEPT
-    sudo iptables -I INPUT -p tcp -m tcp --dport 8888 -j ACCEPT
-
-elif [ "$NET" = "testnet" ]; then
-    sudo iptables -I INPUT -p tcp -m tcp --dport 19806 -j ACCEPT
-    sudo iptables -I INPUT -p tcp -m tcp --dport 18888 -j ACCEPT
-
-elif [ "$NET" = "devnet" ]; then
-    sudo iptables -I INPUT -p tcp -m tcp --dport 29806 -j ACCEPT
-    sudo iptables -I INPUT -p tcp -m tcp --dport 28888 -j ACCEPT
-fi
+sudo iptables -I INPUT -p tcp -m tcp --dport ${RPC_PORT} -j ACCEPT
+sudo iptables -I INPUT -p tcp -m tcp --dport ${P2P_PORT} -j ACCEPT
+sudo iptables -I INPUT -p tcp -m tcp --dport ${HIST_WS_PORT} -j ACCEPT
