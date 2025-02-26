@@ -4,7 +4,6 @@ mkdir -p $CONF_DIR
 echo $CONF_DIR
 
 [ ! -f "$CONF_DIR/node.env" ]                          && \
-    cp      ./node/$NET/node.env      $CONF_DIR/      && \
     cp      ./node/$NET/genesis.json   $CONF_DIR/      && \
     cp      ./node/docker-compose.yml  $CONF_DIR/      && \
     cp -r   ./node/conf                $CONF_DIR/      && \
