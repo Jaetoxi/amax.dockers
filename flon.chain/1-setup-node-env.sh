@@ -1,5 +1,5 @@
 source ./conf.env
-CONF_DIR=~/.amax_${NET}_${container_id}
+CONF_DIR=~/.flon_${NET}_${container_id}
 mkdir -p $CONF_DIR
 echo $CONF_DIR
 
@@ -39,5 +39,5 @@ echo "history_plugin=$history_plugin" >> $CONF_DIR/node.env
 echo "state_plugin=$state_plugin" >> $CONF_DIR/node.env
 echo "bp_plugin=$bp_plugin" >> $CONF_DIR/node.env
 
-cp ./run-node.sh $CONF_DIR/run.sh
+cp ./node/run-node-template.sh $CONF_DIR/run.sh
 chmod +x $CONF_DIR/run.sh

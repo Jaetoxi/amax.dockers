@@ -1,21 +1,21 @@
 #!/bin/bash
 
-AMAX=$1
-LOGFILE=$AMAX/logs/node.log
-source $AMAX/bin/start.env
+flon=$1
+LOGFILE=$flon/logs/node.log
+source $flon/bin/start.env
 ulimit -c unlimited
 ulimit -n 65535
 ulimit -s 64000
 
 TIMESTAMP=$(/bin/date +%s)
-NEW_LOGFILE="${AMAX}/logs/${TIMESTAMP}.log" && touch $NEW_LOGFILE
+NEW_LOGFILE="${flon}/logs/${TIMESTAMP}.log" && touch $NEW_LOGFILE
 
-OPTIONS="--data-dir $AMAX/data --config-dir $AMAX/conf"
+OPTIONS="--data-dir $flon/data --config-dir $flon/conf"
 #SNAPSHOT=./data/snapshots/snapshot-023e2079b717ba7fdfa8c183d41082467120781f3274e0b57235c4c3e02acdf4.bin
-if [[ ! -f $AMAX/data/state/shared_memory.bin ]] && [[ -f "$SNAPSHOT" ]]; then
+if [[ ! -f $flon/data/state/shared_memory.bin ]] && [[ -f "$SNAPSHOT" ]]; then
   OPTIONS="$OPTIONS --snapshot ${SNAPSHOT} "
-elif [[ ! -f $AMAX/data/blocks/blocks.index ]]; then
-  OPTIONS="$OPTIONS --genesis-json $AMAX/conf/genesis.json"
+elif [[ ! -f $flon/data/blocks/blocks.index ]]; then
+  OPTIONS="$OPTIONS --genesis-json $flon/conf/genesis.json"
 fi
 
 trap 'echo "[$(date)]Start Shutdown"; kill $(jobs -p); wait; echo "[$(date)]Shutdown ok"' SIGINT SIGTERM
@@ -24,7 +24,7 @@ trap 'echo "[$(date)]Start Shutdown"; kill $(jobs -p); wait; echo "[$(date)]Shut
 node $params $OPTIONS >> $NEW_LOGFILE 2>&1 &
 #node  $params $OPTIONS --delete-all-blocks >> $NEW_LOGFILE 2>&1 &
 #node  $params $OPTIONS --hard-replay-blockchain --truncate-at-block 87380000 >> $NEW_LOGFILE 2>&1 &
-echo $! > $AMAX/node.pid
+echo $! > $flon/node.pid
 
 
 [[ -f "$LOGFILE" ]] && unlink $LOGFILE

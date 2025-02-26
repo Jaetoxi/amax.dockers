@@ -1,8 +1,8 @@
 #!/bin/bash
 
-AMAX=/opt/amax
-DATADIR=$AMAX/data
-GENESIS=$AMAX/genesis.json
+flon=/opt/flon
+DATADIR=$flon/data
+GENESIS=$flon/genesis.json
 
 if [ -f $DATADIR"/node.pid" ]; then
     pid=$(cat $DATADIR"/node.pid")

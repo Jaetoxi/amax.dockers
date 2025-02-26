@@ -3,7 +3,7 @@
 
 set -a && source ./node.env
 
-DEST_HOME="${NODE_HOME}/amax_${NET}_${container_id}"
+DEST_HOME="${NODE_HOME}/flon_${NET}_${container_id}"
 DEST_CONF="${DEST_HOME}/conf/config.ini"
 mkdir -p $DEST_HOME/conf $DEST_HOME/data $DEST_HOME/logs
 
