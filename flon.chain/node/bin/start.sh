@@ -21,7 +21,7 @@ fi
 trap 'echo "[$(date)]Start Shutdown"; kill $(jobs -p); wait; echo "[$(date)]Shutdown ok"' SIGINT SIGTERM
 
 ## launch node program...
-node $params $OPTIONS >> $NEW_LOGFILE 2>&1 &
+fonod $params $OPTIONS >> $NEW_LOGFILE 2>&1 &
 #node  $params $OPTIONS --delete-all-blocks >> $NEW_LOGFILE 2>&1 &
 #node  $params $OPTIONS --hard-replay-blockchain --truncate-at-block 87380000 >> $NEW_LOGFILE 2>&1 &
 echo $! > $flon/node.pid
