@@ -26,10 +26,10 @@ if [ "${p2p_peer_addresses}" != "" ]; then
 fi
 
 
-if  [ "${history_plugin}" == "true" ]; then
+if  [ "${trace_plugin}" == "true" ]; then
     echo " " >> $DEST_CONF
-    echo "#### History plugin conf: " >> $DEST_CONF
-    cat ./conf/plugin_history.ini >> $DEST_CONF
+    echo "#### Trace plugin conf: " >> $DEST_CONF
+    cat ./conf/plugin_trace.ini >> $DEST_CONF
 fi
 
 if  [ "${state_plugin}" == "true" ]; then

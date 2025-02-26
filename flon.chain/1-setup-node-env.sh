@@ -34,7 +34,7 @@ echo "RPC_PORT=$RPC_PORT" >> $CONF_DIR/node.env
 echo "HIST_WS_PORT=$HIST_WS_PORT" >> $CONF_DIR/node.env
 echo "NODE_IMG_VER=$NODE_IMG_VER" >> $CONF_DIR/node.env
 echo "NODE_HOME=$NODE_HOME" >> $CONF_DIR/node.env
-echo "history_plugin=$history_plugin" >> $CONF_DIR/node.env
+echo "trace_plugin=$trace_plugin" >> $CONF_DIR/node.env
 echo "state_plugin=$state_plugin" >> $CONF_DIR/node.env
 echo "bp_plugin=$bp_plugin" >> $CONF_DIR/node.env
 
