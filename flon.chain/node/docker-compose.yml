@@ -3,7 +3,7 @@ version: "3.9"
 services:
   node:
     image: eos/nodeos:${NODE_IMG_VER}
-    container_name: node-${NET}-${container_id}
+    container_name: flon_${NET}_${container_id}
     working_dir: ${NODE_HOME}/flon_${NET}_${container_id}
     entrypoint: ["./bin/start.sh", "$NODE_HOME/flon_${NET}_${container_id}", ""]
     restart: always
