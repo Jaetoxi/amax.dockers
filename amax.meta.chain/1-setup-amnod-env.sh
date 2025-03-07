@@ -3,6 +3,8 @@ CONF_DIR=~/.amax_${NET}_${container_id}
 mkdir -p $CONF_DIR
 echo $CONF_DIR
 
+rm -rf $CONF_DIR/node.env
+
 [ ! -f "$CONF_DIR/node.env" ]                          && \
     cp      ./node/$NET/node.env      $CONF_DIR/      && \
     cp      ./node/$NET/genesis.json   $CONF_DIR/      && \
